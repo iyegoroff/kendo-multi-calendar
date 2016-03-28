@@ -120,4 +120,4 @@
     });
 
     ui.plugin(MultiCalendar);
-});
+}());
