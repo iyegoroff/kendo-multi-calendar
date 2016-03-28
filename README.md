@@ -1,4 +1,4 @@
-Extended Kendo UI Calendar widget that supports multiselection.
+Extended Kendo UI Calendar widget that supports multiselection. [Demo](http://iyegoroff.github.io/kendo-multi-calendar/)
 
 ## Installation
 
