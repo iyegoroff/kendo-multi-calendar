@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/iyegoroff/kendo-multi-calendar#readme",
   "devDependencies": {
+    "coveralls": "^2.11.9",
+    "istanbul": "^0.4.3",
     "mocha": "^2.4.5",
     "restify": "^4.0.4",
     "uglify-js": "^2.6.2",

@@ -2,7 +2,9 @@ Extended Kendo UI Calendar widget that supports multiselection. [Demo](http://iy
 
 ## Installation
 
-Copy kendo-multi-calendar.js script and include it in your project via script tag along with kendo-ui-core or kendo-ui.
+`npm i kendo-multi-calendar`
+
+kendo-multi-calendar.min.js script should be included in your project along with kendo-ui-core or kendo-ui.
 
 ## Usage
 
@@ -10,8 +12,8 @@ Same as ordinary Kendo UI Calendar, the only exception is `values` option/method
 
 ## Tests
 
-TODO
+Tested with Zombie.js.
 
 ## Contributing
 
-Add unit tests for any new or changed functionality.
+Add tests for any new or changed functionality.
