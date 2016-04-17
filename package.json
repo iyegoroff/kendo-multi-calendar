@@ -5,7 +5,8 @@
   "main": "kendo-multi-calendar.js",
   "scripts": {
     "prepublish": "uglifyjs -c -m -o kendo-multi-calendar.min.js kendo-multi-calendar.js",
-    "test": "mocha --reporter spec --timeout 10s"
+    "test": "mocha --reporter spec --timeout 10s",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec -t 10s test/*"
   },
   "repository": {
     "type": "git",
