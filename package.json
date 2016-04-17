@@ -4,7 +4,8 @@
   "description": "Kendo UI calendar with multiple date selection.",
   "main": "kendo-multi-calendar.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "uglifyjs -c -m -o kendo-multi-calendar.min.js kendo-multi-calendar.js",
+    "test": "mocha --reporter spec --timeout 10s"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/iyegoroff/kendo-multi-calendar/issues"
   },
-  "homepage": "https://github.com/iyegoroff/kendo-multi-calendar#readme"
+  "homepage": "https://github.com/iyegoroff/kendo-multi-calendar#readme",
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "restify": "^4.0.4",
+    "uglify-js": "^2.6.2",
+    "zombie": "^4.2.1"
+  }
 }
