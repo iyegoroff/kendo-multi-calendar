@@ -1,9 +1,11 @@
-Extended Kendo UI Calendar widget that supports multiselection. [Demo](http://iyegoroff.github.io/kendo-multi-calendar/)
+kendo-multi-calendar
 =========
 [![npm version](https://badge.fury.io/js/kendo-multi-calendar.svg)](https://badge.fury.io/js/kendo-multi-calendar)
 [![Build Status](https://travis-ci.org/iyegoroff/kendo-multi-calendar.svg?branch=master)](https://travis-ci.org/iyegoroff/kendo-multi-calendar)
 [![devDependency Status](https://david-dm.org/iyegoroff/kendo-multi-calendar/dev-status.svg)](https://david-dm.org/iyegoroff/kendo-multi-calendar#info=devDependencies)
 [![npm](https://img.shields.io/npm/l/express.svg)](https://www.npmjs.com/package/kendo-multi-calendar)
+
+Extended Kendo UI Calendar widget that supports multiselection. [Demo](http://iyegoroff.github.io/kendo-multi-calendar/)
 
 ## Installation
 
