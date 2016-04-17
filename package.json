@@ -5,8 +5,8 @@
   "main": "kendo-multi-calendar.js",
   "scripts": {
     "prepublish": "uglifyjs -c -m -o kendo-multi-calendar.min.js kendo-multi-calendar.js",
-    "test": "mocha --reporter spec --timeout 10s",
-    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec -t 10s test/*"
+    "pretest": "cp kendo-multi-calendar.js test/public",
+    "test": "mocha -R spec -t 10s"
   },
   "repository": {
     "type": "git",
@@ -24,8 +24,6 @@
   },
   "homepage": "https://github.com/iyegoroff/kendo-multi-calendar#readme",
   "devDependencies": {
-    "coveralls": "^2.11.9",
-    "istanbul": "^0.4.3",
     "mocha": "^2.4.5",
     "restify": "^4.0.4",
     "uglify-js": "^2.6.2",
