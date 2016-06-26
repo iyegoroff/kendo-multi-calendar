@@ -24,9 +24,9 @@
   },
   "homepage": "https://github.com/iyegoroff/kendo-multi-calendar#readme",
   "devDependencies": {
-    "mocha": "^2.4.5",
-    "restify": "^4.0.4",
-    "uglify-js": "^2.6.2",
+    "mocha": "^2.5.3",
+    "restify": "^4.1.1",
+    "uglify-js": "^2.6.4",
     "zombie": "^4.2.1"
   }
 }

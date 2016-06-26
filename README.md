@@ -15,7 +15,15 @@ kendo-multi-calendar.min.js script should be included in your project along with
 
 ## Usage
 
-Same as ordinary Kendo UI Calendar, the only exception is `values` option/method which is used instead of `value`.
+```javascript
+var multiCalendar = $("#multiCalendar").kendoMultiCalendar({
+    values: [new Date(), new Date(2016, 5, 2)], // use this option instead of 'value'
+    maxSelectedItems: 3,
+    //... everything else is just like in ordinary Kendo UI Calendar
+}).data('kendoMultiCalendar');
+
+multiCalendar.values([]);
+```
 
 ## Tests
 
