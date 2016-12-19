@@ -4,10 +4,23 @@
   "description": "Kendo UI calendar with multiple date selection.",
   "main": "kendo-multi-calendar.js",
   "scripts": {
-    "prepublish": "uglifyjs -c -m -o kendo-multi-calendar.min.js kendo-multi-calendar.js",
-    "pretest": "cp kendo-multi-calendar.js test/public",
-    "test": "mocha -R spec -t 10s"
+    "postinstall": "typings i",
+    "preversion": "npm run build && npm test",
+    "postversion": "git add -A . && git push && git push --tags",
+    "build": "tsc && uglifyjs -c -m -o ./dist/kendo-multi-calendar.min.js ./dist/kendo-multi-calendar.js",
+    "test": "npm run lint && npm run test:local",
+    "test:local": "npm run build:tests && intern-runner config=build/tests/intern",
+    "test:ci": "npm run build:tests && intern-runner config=build/tests/intern-ci",
+    "build:tests": "tsc -p tests && cp tests/index.html build/tests/index.html",
+    "lint": "tslint kendo-multi-calendar.ts tests/**/*.ts",
+    "coverage": "remap-istanbul -i coverage/coverage-final.json -t text-lcov | coveralls"
   },
+  "files": [
+    "dist/",
+    "kendo-multi-calendar.ts",
+    "tsconfig.json",
+    "typings.json"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iyegoroff/kendo-multi-calendar.git"
@@ -24,9 +37,14 @@
   },
   "homepage": "https://github.com/iyegoroff/kendo-multi-calendar#readme",
   "devDependencies": {
-    "mocha": "^2.5.3",
-    "restify": "^4.1.1",
-    "uglify-js": "^2.6.4",
-    "zombie": "^4.2.1"
+    "coveralls": "^2.11.15",
+    "intern": "^3.4.2",
+    "remap-istanbul": "^0.8.1",
+    "tslint": "^4.1.0",
+    "tslint-config-standard": "^2.0.0",
+    "typescript": "^2.1.4",
+    "typings": "^2.0.0",
+    "uglify-js": "^2.7.5",
+    "vrsource-tslint-rules": "^0.14.1"
   }
 }

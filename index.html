@@ -11,12 +11,12 @@
 
   <script src="https://kendo.cdn.telerik.com/2016.1.412/js/jquery.min.js"></script>
   <script src="https://kendo.cdn.telerik.com/2016.1.412/js/kendo.ui.core.min.js"></script>
-  <script src="kendo-multi-calendar.js"></script>
+  <script src="dist/kendo-multi-calendar.js"></script>
   <script>
     $(function () {
       $('#multi-cal').kendoMultiCalendar({
         values: [new Date()]
-      });
+      }).data('kendoMultiCalendar');
     });
   </script>
 </body>
