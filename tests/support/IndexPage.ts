@@ -4,8 +4,8 @@ import * as Promise from 'dojo/Promise';
 
 export class IndexPage {
 
-    private static delay = 250;
-    private static navigateDelay = 1000;
+    private static delay = 1000;
+    private static navigateDelay = 2000;
 
     constructor(private remote: Command<any>, depth: kendoExt.CalendarDepth = 'month') {
         let code: Function;
@@ -19,8 +19,8 @@ export class IndexPage {
         }
 
         this.remote = remote
-            .setFindTimeout(500)
-            .setPageLoadTimeout(2500)
+            .setFindTimeout(2500)
+            .setPageLoadTimeout(5000)
             .get((require as IRequire & NodeRequire).toUrl('../index.html'))
             .execute(code, []);
     }
