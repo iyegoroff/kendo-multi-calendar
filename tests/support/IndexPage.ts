@@ -19,6 +19,8 @@ export class IndexPage {
         }
 
         this.remote = remote
+            .setFindTimeout(500)
+            .setPageLoadTimeout(2500)
             .get((require as IRequire & NodeRequire).toUrl('../index.html'))
             .execute(code, []);
     }

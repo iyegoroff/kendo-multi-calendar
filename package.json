@@ -39,7 +39,6 @@
   "homepage": "https://github.com/iyegoroff/kendo-multi-calendar#readme",
   "devDependencies": {
     "coveralls": "^2.11.15",
-    "dojo": "^2.0.0-alpha.7",
     "intern": "^3.4.2",
     "remap-istanbul": "^0.8.1",
     "tslint": "^4.1.0",

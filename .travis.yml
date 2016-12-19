@@ -4,11 +4,9 @@ matrix:
   fast_finish: true
   include:
     - env: TEST='minimal'
-      node_js:
-        - '7'
-        - '4'
+      node_js: '7'
     - env: TEST='normal'
-      node_js: '4'
+      node_js: '7'
   allow_failures:
     - env: TEST='normal'
 
