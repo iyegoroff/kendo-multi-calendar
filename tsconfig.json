@@ -11,5 +11,9 @@
         "typeRoots": [
             "typings/global"
         ]
-    }
+    },
+    "include": [
+        "kendo-multi-calendar.ts",
+        "typings/**/*.ts"
+    ]
 }
