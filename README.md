@@ -7,6 +7,8 @@ kendo-multi-calendar
 [![devDependency Status](https://david-dm.org/iyegoroff/kendo-multi-calendar/dev-status.svg)](https://david-dm.org/iyegoroff/kendo-multi-calendar#info=devDependencies)
 [![npm](https://img.shields.io/npm/l/express.svg)](https://www.npmjs.com/package/kendo-multi-calendar)
 
+[![Build Status](https://saucelabs.com/browser-matrix/iyegoroff-3.svg)](https://saucelabs.com/beta/builds/02341651d31d45b19e93dc08dbc67506)
+
 Extended Kendo UI Calendar widget that supports multiselection. [Demo](http://iyegoroff.github.io/kendo-multi-calendar/)
 
 ## Installation

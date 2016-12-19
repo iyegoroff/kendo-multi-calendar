@@ -5,7 +5,7 @@ export const environments = [
 export const tunnel = 'SeleniumTunnel';
 
 export const tunnelOptions = {
-    drivers: [ 'chrome', 'firefox' ]
+    drivers: [ 'chrome' ]
 };
 
 export const reporters = [
