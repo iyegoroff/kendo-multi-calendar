@@ -1,8 +1,16 @@
 language: node_js
 
-node_js:
-  - '7'
-  - '4'
+matrix:
+  fast_finish: true
+  include:
+    - env: TEST='minimal'
+      node_js:
+        - '7'
+        - '4'
+    - env: TEST='normal'
+      node_js: '4'
+  allow_failures:
+    - env: TEST='normal'
 
 addons:
   sauce_connect: true
@@ -19,12 +27,14 @@ deploy:
     secure: "yLiZO210USKcY2WX6srFBtou+vUv9PnRbxnhfIHlk08OvFP0/diLTm8McfLjNw+UwsS7F6DEukuMXgGLEHBTF0GD8wTnGV0/QkPXWaUmLTCntI5WMV3attsUrUJ5mGrEbRz0i13nNnWrDJozQMFq8FESB9ZBDDTed2bCWZquU6tvLC/+IOA4Hg0G5+YY+8jvZqb8I5s2OIbEZbr0HpL+9eaYsDto/yH280Wa5heCwQ4Ye3iBkX+h01/sW+UaxUBrHF01rpYfDHxsmdzWdWCg56KGT4M+Kb8XtsfpW57PmcfNnxrZxBK6zbp4r/my5jmk0YPeTwZFB/GCaQmgq+eg92YM0+BZFmBDcDyoaoRkWwxd0JJlWZ4v4hVaF/aHqv4kaPu0kOcP9UjPX0Wtx5rGItGheCofN8kH++OWayBm5gUiuvmutqoXgZNHEotNzzd0cOGmOlpIJM9/5uSSyJ/cl/uAvMIy8LwyBsy/26AHaZqnS90V2YGBqGrhH0BZFnLLfAo5e8L2ryBmd5a1DEobW7OjpQyrPHKFcfGL3lx4G1r+55Ry/C9E7PgTJQMNoJHJEZMEhBUNh6FGU6tkK1dztyjT3JoL1JMiXdstZqkqenmjGdpkfVbpYfSw9l+WLkDBpKaZl5Z5KuFlnZdtFVVnhuANBlgBZ967Bg2Ol+M1DV4="
   on:
     tags: true
+    condition: $TEST == 'minimal'
 
 
 before_script:
   - npm run build
 
 script:
-  - npm run test:ci
+  - if [[ $TEST == 'minimal' ]]; then npm run test:ci:minimal; fi
+  - if [[ $TEST == 'normal' ]]; then npm run test:ci:normal; fi
 after_script:
-  - npm run coverage
+  - if [[ $TEST == 'minimal' ]]; then npm run coverage; fi

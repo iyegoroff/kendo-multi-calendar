@@ -1,6 +1,7 @@
 dist
 build
 typings
+index.html
 
 # Logs
 logs

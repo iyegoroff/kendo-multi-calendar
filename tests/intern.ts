@@ -1,5 +1,6 @@
 export const environments = [
-    { browserName: 'chrome' }
+    { browserName: 'chrome' },
+    { browserName: 'firefox' }
 ];
 
 export const tunnel = 'SeleniumTunnel';

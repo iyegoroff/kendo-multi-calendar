@@ -1,4 +1,4 @@
-export * from './intern';
+export * from './intern-ci-minimal';
 
 export const environments = [
     // {
@@ -22,7 +22,7 @@ export const environments = [
     },
     {
         browserName: 'firefox',
-        version: ['49', '50'],
+        version: ['46'],
         platform: ['Windows 10'],
         recordVideo: true,
         recordScreenshots: false
@@ -50,8 +50,6 @@ export const environments = [
     }
 ];
 
-export const tunnel = 'SauceLabsTunnel';
-
-export const maxConcurrency = 5;
-
 export const reporters = ['Runner'];
+
+export const excludeInstrumentation = true;

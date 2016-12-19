@@ -10,7 +10,8 @@
     "build": "tsc && uglifyjs -c -m -o ./dist/kendo-multi-calendar.min.js ./dist/kendo-multi-calendar.js",
     "test": "npm run lint && npm run test:local",
     "test:local": "npm run build:tests && intern-runner config=build/tests/intern",
-    "test:ci": "npm run build:tests && intern-runner config=build/tests/intern-ci",
+    "test:ci:minimal": "npm run build:tests && intern-runner config=build/tests/intern-ci-minimal",
+    "test:ci:normal": "npm run build:tests && intern-runner config=build/tests/intern-ci",
     "build:tests": "tsc -p tests && cp tests/index.html build/tests/index.html",
     "lint": "tslint kendo-multi-calendar.ts tests/**/*.ts",
     "coverage": "remap-istanbul -i coverage/coverage-final.json -t text-lcov | coveralls"
