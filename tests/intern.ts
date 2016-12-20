@@ -1,4 +1,5 @@
 export const environments = [
+    { browserName: 'safari' },
     { browserName: 'chrome' }
 ];
 

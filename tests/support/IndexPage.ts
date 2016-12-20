@@ -1,10 +1,11 @@
 import * as Command from 'leadfoot/Command';
 import { IRequire } from 'dojo/loader';
 import * as Promise from 'dojo/Promise';
+import Element = require('leadfoot/Element');
 
 export class IndexPage {
 
-    private static delay = 1000;
+    private static delay = 250;
     private static navigateDelay = 2000;
 
     constructor(private remote: Command<any>, depth: kendoExt.CalendarDepth = 'month') {
@@ -19,9 +20,9 @@ export class IndexPage {
         }
 
         this.remote = remote
+            .get((require as IRequire & NodeRequire).toUrl('../index.html'))
             .setFindTimeout(2500)
             .setPageLoadTimeout(5000)
-            .get((require as IRequire & NodeRequire).toUrl('../index.html'))
             .execute(code, []);
     }
 
@@ -44,11 +45,11 @@ export class IndexPage {
     }
 
     private static daySel(date: Date): string {
-        return `[data-value$='/${date.getDate()}']`;
+        return `[data-value$='${date.getFullYear()}/${date.getMonth()}/${date.getDate()}']`;
     }
 
     private static monthSel(date: Date): string {
-        return `[data-value$='/${date.getMonth()}/1']`;
+        return `[data-value$='${date.getFullYear()}/${date.getMonth()}/1']`;
     }
 
     private static yearSel(date: Date): string {
@@ -78,7 +79,7 @@ export class IndexPage {
             selector = IndexPage.daySel;
         } else if (depth === 'year') {
             selector = IndexPage.monthSel;
-        } else if (depth === 'decade') {
+        } else {
             selector = IndexPage.yearSel;
         }
 
@@ -86,7 +87,7 @@ export class IndexPage {
             (command, date) => {
                 return command.then<any>(() => this.remote
                     .findByCssSelector(selector(date))
-                    .click()
+                    .then<void>(this.mouseClick)
                     .sleep(IndexPage.delay)
                 );
             },
@@ -174,6 +175,19 @@ export class IndexPage {
             .then(elems => Promise.all(
                 elems.map(elem => elem.getAttribute('data-value'))
             ))
-            .then(values => values.filter(v => v !== null).map(dataValueToDate));
+            .then(values => values.filter(v => v !== null).map(dataValueToDate))
+            .catch((error: Error) => {
+                if (error.name === 'NoSuchElement') {
+                    return [];
+                } else {
+                    throw error;
+                }
+            });
+    }
+
+    private mouseClick = (element: Element): Command<void> => {
+        return this.remote
+            .moveMouseTo(element)
+            .clickMouseButton();
     }
 }

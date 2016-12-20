@@ -38,10 +38,6 @@ namespace kendoExt {
             (this as any).navigate();
         }
 
-        private static isString(item: any): boolean {
-            return Object.prototype.toString.call(item) === '[object String]';
-        }
-
         private static isSameDate(first: Date, second: Date) {
             return first
                 && second
@@ -175,4 +171,5 @@ namespace kendoExt {
 
 interface JQuery {
     kendoMultiCalendar(options?: kendoExt.MultiCalendarOptions): JQuery;
+    data(key: 'kendoMultiCalendar'): kendoExt.MultiCalendar;
 }
