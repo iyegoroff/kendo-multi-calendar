@@ -12,7 +12,7 @@ export const environments = [
 
 export const tunnel = 'SauceLabsTunnel';
 
-export const maxConcurrency = 5;
+export const maxConcurrency = 1;
 
 
 export const reporters = [
