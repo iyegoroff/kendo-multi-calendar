@@ -17,13 +17,14 @@ export const environments = [
         browserName: 'chrome',
         version: ['53', '54'],
         platform: ['Windows 10'],
-        recordVideo: true,
+        recordVideo: false,
         recordScreenshots: false
     },
     {
         browserName: 'firefox',
-        version: ['46'],
+        version: ['49', '50'],
         platform: ['Windows 10'],
+        marionette: true,
         recordVideo: true,
         recordScreenshots: false
     },
@@ -38,14 +39,14 @@ export const environments = [
         browserName: 'internet explorer',
         version: ['10', '11'],
         platform: 'Windows 7',
-        recordVideo: true,
+        recordVideo: false,
         recordScreenshots: false
     },
     {
         browserName: 'safari',
         version: ['9', '10'],
         platform: 'OS X 10.11',
-        recordVideo: true,
+        recordVideo: false,
         recordScreenshots: false
     }
 ];
