@@ -12,11 +12,11 @@ export class IndexPage {
         let code: Function;
 
         if (depth === 'month') {
-            code = () => $('#multi-cal').kendoMultiCalendar({ maxSelectedItems: 3 });
+            code = () => { $('#multi-cal').kendoMultiCalendar({ maxSelectedItems: 3 }); };
         } else if (depth === 'year') {
-            code = () => $('#multi-cal').kendoMultiCalendar({ depth: 'year', start: 'year' });
+            code = () => { $('#multi-cal').kendoMultiCalendar({ depth: 'year', start: 'year' }); };
         } else {
-            code = () => $('#multi-cal').kendoMultiCalendar({ depth: 'decade', start: 'decade' });
+            code = () => { $('#multi-cal').kendoMultiCalendar({ depth: 'decade', start: 'decade' }); };
         }
 
         this.remote = remote
