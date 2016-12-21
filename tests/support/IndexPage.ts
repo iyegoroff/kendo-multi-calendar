@@ -5,8 +5,8 @@ import Element = require('leadfoot/Element');
 
 export class IndexPage {
 
-    private static delay = 250;
-    private static navigateDelay = 2000;
+    private static delay = 150;
+    private static navigateDelay = 3500;
 
     constructor(private remote: Command<any>, depth: kendoExt.CalendarDepth = 'month') {
         let code: Function;

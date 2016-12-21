@@ -1,21 +1,16 @@
 export const environments = [
     { browserName: 'safari' },
-    { browserName: 'chrome' }
+    { browserName: 'chrome' },
+    { browserName: 'firefox', marionette: true }
 ];
 
 export const tunnel = 'SeleniumTunnel';
 
 export const tunnelOptions = {
-    drivers: [ 'chrome' ]
+    drivers: [ 'chrome', 'firefox' ]
 };
 
-export const reporters = [
-    'Runner',
-    {
-        id: 'node_modules/remap-istanbul/lib/intern-reporters/JsonCoverage',
-        filename: 'coverage/coverage-final.json'
-    }
-];
+export const reporters = ['Runner'];
 
 export const loaderOptions = {
     packages: [
@@ -25,4 +20,4 @@ export const loaderOptions = {
 
 export const functionalSuites = [ 'build/tests/functional/index' ];
 
-export const excludeInstrumentation = /^(?:build|tests|node_modules)\//;
+export const excludeInstrumentation = true;
