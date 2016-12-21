@@ -5,7 +5,6 @@ import Element = require('leadfoot/Element');
 
 export class IndexPage {
 
-    private static delay = 150;
     private static navigateDelay = 3500;
 
     constructor(private remote: Command<any>, depth: kendoExt.CalendarDepth = 'month') {
@@ -74,8 +73,7 @@ export class IndexPage {
         };
 
         return this.remote
-            .execute(code, [dates])
-            .sleep(IndexPage.delay);
+            .execute<void>(code, [dates]);
     }
 
     public selectDatesWithClick(dates: Date[], depth: kendoExt.CalendarDepth = 'month'): Command<void> {
@@ -94,7 +92,6 @@ export class IndexPage {
                 return command.then<any>(() => this.remote
                     .findByCssSelector(selector(date))
                     .then<void>(this.mouseClick)
-                    .sleep(IndexPage.delay)
                 );
             },
             this.remote
@@ -194,7 +191,6 @@ export class IndexPage {
     private mouseClick = (element: Element): Command<void> => {
         return this.remote
             .moveMouseTo(element)
-            .sleep(IndexPage.delay)
             .clickMouseButton();
     }
 }
