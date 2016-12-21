@@ -13,15 +13,15 @@ export class IndexPage {
 
         if (depth === 'month') {
             code = (cb: Function) => {
-                $(() => { $('#multi-cal').kendoMultiCalendar({ maxSelectedItems: 3 }); cb(); });
+                $('#multi-cal').kendoMultiCalendar({ maxSelectedItems: 3 }); cb();
             };
         } else if (depth === 'year') {
             code = (cb: Function) => {
-                $(() => { $('#multi-cal').kendoMultiCalendar({ depth: 'year', start: 'year' }); cb(); });
+                $('#multi-cal').kendoMultiCalendar({ depth: 'year', start: 'year' }); cb();
             };
         } else {
             code = (cb: Function) => {
-                $(() => { $('#multi-cal').kendoMultiCalendar({ depth: 'decade', start: 'decade' }); cb(); });
+                $('#multi-cal').kendoMultiCalendar({ depth: 'decade', start: 'decade' }); cb();
             };
         }
 
