@@ -12,18 +12,24 @@ export class IndexPage {
         let code: Function;
 
         if (depth === 'month') {
-            code = () => { $('#multi-cal').kendoMultiCalendar({ maxSelectedItems: 3 }); };
+            code = (cb: Function) => {
+                $(() => { $('#multi-cal').kendoMultiCalendar({ maxSelectedItems: 3 }); cb(); });
+            };
         } else if (depth === 'year') {
-            code = () => { $('#multi-cal').kendoMultiCalendar({ depth: 'year', start: 'year' }); };
+            code = (cb: Function) => {
+                $(() => { $('#multi-cal').kendoMultiCalendar({ depth: 'year', start: 'year' }); cb(); });
+            };
         } else {
-            code = () => { $('#multi-cal').kendoMultiCalendar({ depth: 'decade', start: 'decade' }); };
+            code = (cb: Function) => {
+                $(() => { $('#multi-cal').kendoMultiCalendar({ depth: 'decade', start: 'decade' }); cb(); });
+            };
         }
 
         this.remote = remote
             .get((require as IRequire & NodeRequire).toUrl('../index.html'))
             .setFindTimeout(2500)
             .setPageLoadTimeout(5000)
-            .execute(code, []);
+            .executeAsync(code, []);
     }
 
     public static day(day: number): Date {
