@@ -62,7 +62,6 @@ export class IndexPage {
     }
 
     private static parseDates(dates: string): Date[] {
-        console.log(dates, JSON.parse(dates).map((date: string) => new Date(date)));
         return JSON.parse(dates).map((date: string) => new Date(date));
     }
 
@@ -171,7 +170,6 @@ export class IndexPage {
         const dataValueToDate = (value: string) => {
             const [y, m, d] = value.split('/');
 
-            console.log(value, '->', new Date(+y, +m, +d));
             return new Date(+y, +m, +d);
         };
 

@@ -17,6 +17,7 @@ bdd.describe('multi calendar', () => {
         return page.selectDatesWithCode(dates)
             .then<Date[][]>(() => page.packedSelectedDates())
             .then(([apiDates, domDates]) => {
+                console.log(apiDates, domDates);
                 expect(apiDates).to.eql(dates);
                 expect(domDates).to.eql(dates);
             });
@@ -29,6 +30,7 @@ bdd.describe('multi calendar', () => {
         return page.selectDatesWithClick(dates)
             .then<Date[][]>(() => page.packedSelectedDates())
             .then(([apiDates, domDates]) => {
+                console.log(apiDates, domDates);
                 expect(apiDates).to.eql(dates);
                 expect(domDates).to.eql(dates);
             });
