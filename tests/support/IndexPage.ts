@@ -169,9 +169,9 @@ export class IndexPage {
 
     private selectedDatesFromDom(): Command<Date[]> {
         const dataValueToDate = (value: string) => {
-            console.log(value);
             const [y, m, d] = value.split('/');
 
+            console.log(value, '->', new Date(+y, +m, +d));
             return new Date(+y, +m, +d);
         };
 
