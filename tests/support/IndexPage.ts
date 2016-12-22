@@ -62,6 +62,7 @@ export class IndexPage {
     }
 
     private static parseDates(dates: string): Date[] {
+        console.log(dates, JSON.parse(dates).map((date: string) => new Date(date)));
         return JSON.parse(dates).map((date: string) => new Date(date));
     }
 

@@ -28,13 +28,13 @@ export const environments = [
     //     recordVideo: true,
     //     recordScreenshots: false
     // },
-    {
-        browserName: 'MicrosoftEdge',
-        version: ['13'/* , '14'*/],
-        platform: 'Windows 10',
-        recordVideo: true,
-        recordScreenshots: false
-    }// ,
+    // {
+    //     browserName: 'MicrosoftEdge',
+    //     version: ['13', '14'],
+    //     platform: 'Windows 10',
+    //     recordVideo: true,
+    //     recordScreenshots: false
+    // },
     // {
     //     browserName: 'internet explorer',
     //     version: ['10', '11'],
@@ -42,13 +42,13 @@ export const environments = [
     //     recordVideo: false,
     //     recordScreenshots: false
     // },
-    // {
-    //     browserName: 'safari',
-    //     version: ['9', '10'],
-    //     platform: 'OS X 10.11',
-    //     recordVideo: false,
-    //     recordScreenshots: false
-    // }
+    {
+        browserName: 'safari',
+        version: ['9'/*, '10'*/],
+        platform: 'OS X 10.11',
+        recordVideo: false,
+        recordScreenshots: false
+    }
 ];
 
 export const reporters = ['Runner'];
