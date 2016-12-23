@@ -175,6 +175,11 @@ export class IndexPage {
 
         return this.remote
             .findAllByCssSelector('td.k-state-selected > a')
+            .then(elems => {
+                console.log(elems);
+                console.log(elems.map(elem => elem.getAttribute('data-value')));
+                return elems;
+            })
             .then(elems => Promise.all(
                 elems.map(elem => elem.getAttribute('data-value'))
             ))

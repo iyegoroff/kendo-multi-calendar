@@ -44,9 +44,8 @@ export const environments = [
     // },
     {
         browserName: 'safari',
-        version: ['8'],
-        platform: 'OS X 10.10',
-        seleniumVersion: '2.48.0',
+        version: ['9'],
+        platform: 'OS X 10.11',
         recordVideo: false,
         recordScreenshots: false
     }
