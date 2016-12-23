@@ -1,18 +1,18 @@
 export * from './intern-ci-minimal';
 
 export const environments = [
+    {
+        browserName: 'iphone',
+        version: ['8.1', '9.2'],
+        recordVideo: true,
+        recordScreenshots: false
+    } //,
     // {
-    //     browserName: 'iphone',
-    //     version: ['8.1', '9.2'],
+    //     browserName: 'android',
+    //     version: ['4.4', '5.1'],
     //     recordVideo: true,
     //     recordScreenshots: false
     // },
-    {
-        browserName: 'android',
-        version: ['4.4', '5.1'],
-        recordVideo: true,
-        recordScreenshots: false
-    } // ,
     // {
     //     browserName: 'chrome',
     //     version: ['53', '54'],
