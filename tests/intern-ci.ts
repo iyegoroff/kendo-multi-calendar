@@ -3,7 +3,7 @@ export * from './intern-ci-minimal';
 export const environments = [
     {
         browserName: 'chrome',
-        version: ['53', '54'],
+        version: ['53'],
         platform: ['Windows 10'],
         recordVideo: false,
         recordScreenshots: false
@@ -18,7 +18,7 @@ export const environments = [
     },
     {
         browserName: 'MicrosoftEdge',
-        version: ['13', '14'],
+        version: ['14'],
         platform: 'Windows 10',
         recordVideo: false,
         recordScreenshots: false
