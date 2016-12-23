@@ -7,12 +7,12 @@ export const environments = [
     //     recordVideo: true,
     //     recordScreenshots: false
     // },
-    // {
-    //     browserName: 'android',
-    //     version: ['4.4', '5.1'],
-    //     recordVideo: true,
-    //     recordScreenshots: false
-    // },
+    {
+        browserName: 'android',
+        version: ['4.4', '5.1'],
+        recordVideo: true,
+        recordScreenshots: false
+    }// ,
     // {
     //     browserName: 'chrome',
     //     version: ['53', '54'],
@@ -42,13 +42,6 @@ export const environments = [
     //     recordVideo: false,
     //     recordScreenshots: false
     // },
-    {
-        browserName: 'safari',
-        version: ['9'],
-        platform: 'OS X 10.11',
-        recordVideo: false,
-        recordScreenshots: false
-    }
 ];
 
 export const reporters = ['Runner'];
