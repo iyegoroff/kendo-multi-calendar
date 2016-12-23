@@ -8,12 +8,19 @@ export const environments = [
     //     recordScreenshots: false
     // },
     {
-        browserName: 'android',
-        version: ['4.4', '5.1'],
+        browserName: 'Browser',
         appiumVersion: '1.5.3',
-        recordVideo: true,
-        recordScreenshots: false
-    }// ,
+        deviceName: 'Android Emulator',
+        platformVersion: '5.1',
+        platformName: 'Android'
+    }
+    // {
+    //     browserName: 'android',
+    //     version: ['4.4', '5.1'],
+    //     appiumVersion: '1.5.3',
+    //     recordVideo: true,
+    //     recordScreenshots: false
+    // },
     // {
     //     browserName: 'chrome',
     //     version: ['53', '54'],
