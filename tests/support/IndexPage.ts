@@ -28,6 +28,11 @@ export class IndexPage {
             .get((require as IRequire & NodeRequire).toUrl('../index.html'))
             .setFindTimeout(2500)
             .setPageLoadTimeout(5000)
+            .catch((error: Error) => {
+                if (error.name !== 'UnknownCommand') {
+                    throw error;
+                }
+            })
             .executeAsync(code, []);
     }
 
