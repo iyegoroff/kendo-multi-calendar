@@ -28,11 +28,6 @@ export class IndexPage {
             .get((require as IRequire & NodeRequire).toUrl('../index.html'))
             .setFindTimeout(2500)
             .setPageLoadTimeout(5000)
-            .catch((error: Error) => {
-                if (error.name !== 'UnknownCommand') {
-                    throw error;
-                }
-            })
             .executeAsync(code, []);
     }
 
@@ -149,9 +144,10 @@ export class IndexPage {
 
     public navigateDown(): Command<void> {
         const code = () => {
-            $('#multi-cal')
-                .data('kendoMultiCalendar')
-                .navigateDown(new Date());
+            const cal = $('#multi-cal').data('kendoMultiCalendar');
+
+            cal.navigateDown(new Date());
+            cal.navigateDown(false as any);
         };
 
         return this.remote
