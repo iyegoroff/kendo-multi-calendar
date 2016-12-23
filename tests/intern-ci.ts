@@ -10,6 +10,7 @@ export const environments = [
     {
         browserName: 'android',
         version: ['4.4', '5.1'],
+        appiumVersion: '1.5.3',
         recordVideo: true,
         recordScreenshots: false
     }// ,
