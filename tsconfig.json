@@ -7,10 +7,7 @@
         "declaration": true,
         "moduleResolution": "node",
         "noImplicitAny": true,
-        "strictNullChecks": true,
-        "typeRoots": [
-            "typings/global"
-        ]
+        "strictNullChecks": true
     },
     "include": [
         "kendo-multi-calendar.ts",
