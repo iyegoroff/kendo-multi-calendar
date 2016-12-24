@@ -41,11 +41,13 @@ multiCalendar.values([]);
 This module also contains type declarations.
 
 ```typescript
-// use 'reference' directive if you include kendo-multi-calendar with a 'script' tag
+// use 'reference' directive
 /// <reference path="node_modules/kendo-multi-calendar/dist/kendo-multi-calendar.d.ts" />
 
-// use import with module bundler (e.g. webpack)
-import * as kendoExt from 'kendo-multi-calendar';
+// or add types to 'compilerOptions' in your tsconfig.json:
+// ...
+// "types": [ "kendo-multi-calendar" ],
+// ...
 
 const calendar = new kendoExt.MultiCalendar('#multiCalendar');
 ```
