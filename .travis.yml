@@ -19,13 +19,20 @@ branches:
     - /^v\d+\.\d+\.\d+$/
 
 before_deploy:
-  cp ./dist/kendo-multi-calendar.js ./public/kendo-multi-calendar.js
+  cp ./dist/kendo-multi-calendar.min.js ./public/kendo-multi-calendar.min.js
 
 deploy:
   - provider: npm
     email: iegoroff@gmail.com
     api_key:
-      secure: "D/IAuIG/zVL/3UDojiqSpFfkcz4UKUH1W5JmAybcd0cqdpd0ETVxA/tgHue1b0Mm7ZRFS/msrGsdq7uIF4abcRHKTJxoqTTZD7gtyyGGXGW4eHMg7OEAXoip+afOPx1WsHx2f2HTVZGxKqHcMh1ZTZQUkoGVzZKn83mG1D79U09ZgG9RDMjO0GbKeEkxKwVKZPDEzvlHH1Vo8hfCEH5ihw9ukUmOYJJsxxD7592S7ZqmmtIgThLEfB0ViQQkQjWSRXYdf1JW1Pu7SbR6DhFBWWw6HXn5BYtNiKLw+ZcVBup5Gz41AaDwoTq/y/ZFkGEI4dmnYyyzUUICZpmmagY37MSXH+/x6Sw3oFpljrAhbN7ByAOhByJajMnVSuCs3qp8PQ6til7VN6/1d8wbS4IVN5xxFqsq4NjktnuGmXebmhUQbsB+5gZcAsrRpSnLJRsVbQDSCK17HONxqwWtAg6i3iuEugw+VdMFVni6cu/6+vShsr4t/BIn6+ApLfgV64Z6j9/pwzPzvCyuNynHR97wMeO5IjJ0/ykmjwWblR3SgoaTMQE9OY0F0QNxnR+5HcddITC74WkcFZ0seBFQFMaGKZgYL4dxDI84oEchKhTvhPpYZ9d8w8LmEZ6U8eF79cdqRcvLuFT0CGt2BHMFkzMHBXnttdCCdOfYVN+Ys8Cbqv4="
+      secure: >
+        Ws0lVPKRNnSeiBf2XAjqGJOqhTaMfZf4Fjc9UdwQTAM7z+z1RpBqf5nTCQPIqu9x3cspP6CQPzArzMQ8hEHdFfUzTNQrqIiO6m/KxbX48Or4zXv
+        2zwDhhr30EjdH56af68J+NogwrQsjDqKDBSwMSYYfuSBw4gzMGn8KH73Km83eW6fNuop3vd+Mej2uUxWg3V6XjmbEfXFponVTEkV1X43XXEBc2N
+        dbBtnfFAyKRXH1mHQF/e/1pRNWDgOfObvqypzpvBoZJGBBOeRikYpv986D1juMWTHDTOxin724OP5i0HbuoF3BtmjURBnovOfMUASqp/IpH39cn
+        TxqoMnjbQuh7znZAC7Zie9EswVo9JAluDS0thqYCZzaSfUdtgZN26xayBcAADrJ7QwrJnABG/d8XlawS7i7vtwhfVQtYOGHD9I/MSgqsDqDAFv7
+        y/nbAbtLGrxsD3lFDQtQGua4ZQU8Dzuya7mDjQTnK+8U0jm7DSBiAq5Q5VGzY5mHHpA7+G4uNzzFRHBMonf76Px19pvZqlMiKqTE6fRTFlWt32d
+        onAtGm73B9EhBQPTe39qWMjipGjFqRZiVCNBwPKo3TDlyCJbRFCPkhEsRW+BvdJo5aizDSQhtKt+JcfC2ZOhuAH6CR8TJACVmS6h/frNPV1vNw+
+        1/ZzFhZfB7RwV0TLc=
     skip_cleanup: true
     on:
       tags: true
