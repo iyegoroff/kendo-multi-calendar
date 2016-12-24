@@ -26,12 +26,14 @@ deploy:
     email: iegoroff@gmail.com
     api_key:
       secure: "D/IAuIG/zVL/3UDojiqSpFfkcz4UKUH1W5JmAybcd0cqdpd0ETVxA/tgHue1b0Mm7ZRFS/msrGsdq7uIF4abcRHKTJxoqTTZD7gtyyGGXGW4eHMg7OEAXoip+afOPx1WsHx2f2HTVZGxKqHcMh1ZTZQUkoGVzZKn83mG1D79U09ZgG9RDMjO0GbKeEkxKwVKZPDEzvlHH1Vo8hfCEH5ihw9ukUmOYJJsxxD7592S7ZqmmtIgThLEfB0ViQQkQjWSRXYdf1JW1Pu7SbR6DhFBWWw6HXn5BYtNiKLw+ZcVBup5Gz41AaDwoTq/y/ZFkGEI4dmnYyyzUUICZpmmagY37MSXH+/x6Sw3oFpljrAhbN7ByAOhByJajMnVSuCs3qp8PQ6til7VN6/1d8wbS4IVN5xxFqsq4NjktnuGmXebmhUQbsB+5gZcAsrRpSnLJRsVbQDSCK17HONxqwWtAg6i3iuEugw+VdMFVni6cu/6+vShsr4t/BIn6+ApLfgV64Z6j9/pwzPzvCyuNynHR97wMeO5IjJ0/ykmjwWblR3SgoaTMQE9OY0F0QNxnR+5HcddITC74WkcFZ0seBFQFMaGKZgYL4dxDI84oEchKhTvhPpYZ9d8w8LmEZ6U8eF79cdqRcvLuFT0CGt2BHMFkzMHBXnttdCCdOfYVN+Ys8Cbqv4="
+    skip_cleanup: true
     on:
       tags: true
       condition: $TEST == 'minimal'
   - provider: surge
     project: ./public/
     domain: kendo-multi-calendar.surge.sh  
+    skip_cleanup: true
     on:
       tags: true
       condition: $TEST == 'minimal'
