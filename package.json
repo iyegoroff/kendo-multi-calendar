@@ -5,13 +5,10 @@
   "main": "dist/kendo-multi-calendar.js",
   "types": "dist/kendo-multi-calendar.d.ts",
   "scripts": {
-    "postinstall": "typings i",
     "preversion": "npm run clean && npm run reinstall && npm run build && npm test",
     "postversion": "git add -A . && git push && git push --tags",
-    "build": "tsc && npm run build:minify && npm run build:headers",
-    "build:minify": "uglifyjs -c -m -o ./dist/kendo-multi-calendar.min.js ./dist/kendo-multi-calendar.js",
-    "build:headers": "echo \"export = kendoExt;\nexport as namespace kendoExt;\n\n$(cat ./dist/kendo-multi-calendar.d.ts)\" > ./dist/kendo-multi-calendar.d.ts",
-    "reinstall": "rm -rf node_modules typings && npm i",
+    "build": "tsc && uglifyjs -c -m -o ./dist/kendo-multi-calendar.min.js ./dist/kendo-multi-calendar.js",
+    "reinstall": "rm -rf node_modules && npm i",
     "clean": "rm -rf dist build coverage",
     "test": "npm run lint && npm run test:local",
     "test:local": "npm run build:tests && intern-runner config=build/tests/intern",
@@ -24,8 +21,7 @@
   "files": [
     "dist/",
     "kendo-multi-calendar.ts",
-    "tsconfig.json",
-    "typings.json"
+    "tsconfig.json"
   ],
   "repository": {
     "type": "git",
@@ -43,13 +39,14 @@
   },
   "homepage": "https://github.com/iyegoroff/kendo-multi-calendar#readme",
   "devDependencies": {
+    "@types/jquery": "^2.0.34",
+    "@types/kendo-ui": "^2016.3.39",
     "coveralls": "^2.11.15",
     "intern": "^3.4.2",
     "remap-istanbul": "^0.8.4",
     "tslint": "^4.1.0",
     "tslint-config-standard": "^2.0.0",
     "typescript": "^2.1.4",
-    "typings": "^2.0.0",
     "uglify-js": "^2.7.5",
     "vrsource-tslint-rules": "^4.0.0"
   }

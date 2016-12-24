@@ -9,12 +9,13 @@
         "noImplicitAny": true,
         "strictNullChecks": true,
         "types": [
-            "intern"
+            "intern",
+            "kendo-ui",
+            "jquery"
         ]
     },
     "include": [
         "**/*.ts",
-        "../typings/index.d.ts",
         "../kendo-multi-calendar.ts"
     ]
 }

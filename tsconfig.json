@@ -10,7 +10,6 @@
         "strictNullChecks": true
     },
     "include": [
-        "kendo-multi-calendar.ts",
-        "typings/**/*.ts"
+        "kendo-multi-calendar.ts"
     ]
 }
