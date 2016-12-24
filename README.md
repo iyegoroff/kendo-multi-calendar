@@ -5,11 +5,12 @@ kendo-multi-calendar
 [![Coverage Status](https://coveralls.io/repos/github/iyegoroff/kendo-multi-calendar/badge.svg?branch=master)](https://coveralls.io/github/iyegoroff/kendo-multi-calendar?branch=master)
 [![Dependency Status](https://david-dm.org/iyegoroff/kendo-multi-calendar.svg)](https://david-dm.org/iyegoroff/kendo-multi-calendar)
 [![devDependency Status](https://david-dm.org/iyegoroff/kendo-multi-calendar/dev-status.svg)](https://david-dm.org/iyegoroff/kendo-multi-calendar#info=devDependencies)
+[![typings included](https://img.shields.io/badge/typings-included-brightgreen.svg)](#typescript)
 [![npm](https://img.shields.io/npm/l/express.svg)](https://www.npmjs.com/package/kendo-multi-calendar)
 
 [![Build Status](https://saucelabs.com/browser-matrix/iyegoroff-3.svg)](https://saucelabs.com/beta/builds/02341651d31d45b19e93dc08dbc67506)
 
-Extended Kendo UI Calendar widget that supports multiselection. [Demo](http://iyegoroff.github.io/kendo-multi-calendar/)
+Extended Kendo UI Calendar widget that supports multiselection. [Demo](https://kendo-multi-calendar.surge.sh/)
 
 ## Installation
 
@@ -17,24 +18,34 @@ Extended Kendo UI Calendar widget that supports multiselection. [Demo](http://iy
 npm i kendo-multi-calendar
 ```
 
-kendo-multi-calendar.min.js script should be included in your project along with kendo-ui-core or kendo-ui.
+kendo-multi-calendar(.min).js script should be included in your project along with kendo-ui-core or kendo-ui.
 
 ## Usage
 
 ```javascript
 var multiCalendar = $("#multiCalendar").kendoMultiCalendar({
-    values: [new Date(), new Date(2016, 5, 2)], // use this option instead of 'value'
+    // use 'values' option instead of 'value'
+    values: [new Date(), new Date(2016, 5, 2)], 
+
+    // set selection limits
     maxSelectedItems: 3,
+
     //... everything else is just like in ordinary Kendo UI Calendar
 }).data('kendoMultiCalendar');
 
 multiCalendar.values([]);
 ```
 
-## Tests
+### Typescript
 
-Tested with Zombie.js.
+This module also contains type declarations.
 
-## Contributing
+```typescript
+// use 'reference' directive if you include kendo-multi-calendar with a 'script' tag
+/// <reference path="node_modules/kendo-multi-calendar/dist/kendo-multi-calendar.d.ts" />
 
-Add tests for any new or changed functionality.
+// use import with module bundler (e.g. webpack)
+import * as kendoExt from 'kendo-multi-calendar';
+
+const calendar = new kendoExt.MultiCalendar('#multiCalendar');
+```

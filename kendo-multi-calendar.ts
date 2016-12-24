@@ -7,8 +7,8 @@ namespace kendoExt {
         culture?: string;
         dates?: any;
         depth?: CalendarDepth;
-        disableDates?: any|Function;
-        footer?: string|Function;
+        disableDates?: any | Function;
+        footer?: string | Function;
         format?: string;
         max?: Date;
         min?: Date;
