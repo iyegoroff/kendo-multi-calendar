@@ -35,7 +35,7 @@ bdd.describe('multi calendar', () => {
     });
 
     bdd.it('should select months with code', () => {
-        const page = new IndexPage(remote, 'year');
+        const page = new IndexPage(remote, { depth: 'year' });
         const months = [0, 3, 6].map(IndexPage.month);
 
         return page.selectDatesWithCode(months)
@@ -46,10 +46,10 @@ bdd.describe('multi calendar', () => {
     });
 
     bdd.it('should select months with clicks', () => {
-        const page = new IndexPage(remote, 'year');
+        const page = new IndexPage(remote, { depth: 'year' });
         const months = [0, 3, 6].map(IndexPage.month);
 
-        return page.selectDatesWithClick(months, 'year')
+        return page.selectDatesWithClick(months)
             .then<Date[][]>(() => page.packedSelectedDates())
             .then(([apiDates]) => {
                 expect(apiDates).to.eql(months);
@@ -57,7 +57,7 @@ bdd.describe('multi calendar', () => {
     });
 
     bdd.it('should select years with code', () => {
-        const page = new IndexPage(remote, 'decade');
+        const page = new IndexPage(remote, { depth: 'decade' });
         const years = [2016, 2017, 2018].map(IndexPage.year);
 
         return page.selectDatesWithCode(years)
@@ -68,10 +68,10 @@ bdd.describe('multi calendar', () => {
     });
 
     bdd.it('should select years with clicks', () => {
-        const page = new IndexPage(remote, 'decade');
+        const page = new IndexPage(remote, { depth: 'decade' });
         const years = [2016, 2017, 2018].map(IndexPage.year);
 
-        return page.selectDatesWithClick(years, 'decade')
+        return page.selectDatesWithClick(years)
             .then<Date[][]>(() => page.packedSelectedDates())
             .then(([apiDates]) => {
                 expect(apiDates).to.eql(years);
@@ -173,6 +173,48 @@ bdd.describe('multi calendar', () => {
             .then<Date[][]>(() => page.packedSelectedDates())
             .then(([apiDates]) => {
                 expect(apiDates).to.eql(expectedDates);
+            });
+    });
+
+    bdd.it('should delete calendar', () => {
+        const page = new IndexPage(remote);
+
+        return page.multiCalendarIsPresent()
+            .then(isPresent => {
+                expect(isPresent).to.eql(true);
+            })
+            .then<void>(() => page.destroy())
+            .then<boolean>(() => page.multiCalendarIsPresent())
+            .then(isPresent => {
+                expect(isPresent).to.eql(false);
+            });
+    });
+
+    bdd.it('only today should remain selected after click on today in footer', () => {
+        const page = new IndexPage(remote);
+        const dates = [10, 15, 20].map(IndexPage.day);
+        const today = IndexPage.day(new Date().getDate());
+
+        return page.selectDatesWithCode(dates)
+            .then<void>(() => page.todayClick())
+            .then<Date[][]>(() => page.packedSelectedDates())
+            .then(([apiDates, domDates]) => {
+                expect(apiDates).to.eql([today]);
+                expect(domDates).to.eql([today]);
+            });
+    });
+
+    bdd.it('should add today to selected values after click on today in footer', () => {
+        const page = new IndexPage(remote, { cleanOnTodayClick: false });
+        const dates = [10, 15].map(IndexPage.day);
+        const expectedDates = [ ...dates, IndexPage.day(new Date().getDate())];
+
+        return page.selectDatesWithCode(dates)
+            .then<void>(() => page.todayClick())
+            .then<Date[][]>(() => page.packedSelectedDates())
+            .then(([apiDates, domDates]) => {
+                expect(apiDates).to.eql(expectedDates);
+                expect(domDates).to.eql(expectedDates);
             });
     });
 });

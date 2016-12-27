@@ -15,7 +15,8 @@ namespace kendoExt {
         month?: kendo.ui.CalendarMonth;
         start?: CalendarDepth;
         values?: Date[];
-        maxSelectedItems?: number;
+        maxSelectedItems?: number | null;
+        cleanSelectedItemsOnTodayClick?: boolean;
         change?(e: kendo.ui.CalendarEvent): void;
         navigate?(e: kendo.ui.CalendarEvent): void;
     }
@@ -28,12 +29,18 @@ namespace kendoExt {
             century: 3
         };
 
+        private static todaySel = '.k-nav-today';
+
         private _values: Date[];
 
         constructor(element: Element | JQuery | string, options?: MultiCalendarOptions) {
             super(element as Element, options);
 
             this._values = (options && options.values) || [];
+
+            this.wrapper
+                .find(MultiCalendar.todaySel)
+                .on('click', this.selectToday);
 
             (this as any).navigate();
         }
@@ -44,6 +51,14 @@ namespace kendoExt {
                 && first.getFullYear() === second.getFullYear()
                 && first.getMonth() === second.getMonth()
                 && first.getDate() === second.getDate();
+        }
+
+        public destroy() {
+            this.wrapper
+                .find(MultiCalendar.todaySel)
+                .off('click', this.selectToday);
+
+            super.destroy();
         }
 
         public values(newValues?: Date[]): Date[] {
@@ -154,6 +169,16 @@ namespace kendoExt {
                 });
             }
         }
+
+        private selectToday = () => {
+            const today = new Date();
+            const value = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+            const values = (this.options as MultiCalendarOptions).cleanSelectedItemsOnTodayClick
+                ? [value]
+                : [...this._values, value];
+
+            this.values(values);
+        }
     }
 
     MultiCalendar.fn = MultiCalendar.prototype;
@@ -162,7 +187,8 @@ namespace kendoExt {
         ...{
             name: 'MultiCalendar',
             values: [],
-            maxSelectedItems: null
+            maxSelectedItems: null,
+            cleanSelectedItemsOnTodayClick: true
         }
     };
 

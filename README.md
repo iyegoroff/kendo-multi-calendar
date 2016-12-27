@@ -24,11 +24,18 @@ kendo-multi-calendar(.min).js script should be included in your project along wi
 
 ```javascript
 var multiCalendar = $("#multiCalendar").kendoMultiCalendar({
-    // use 'values' option instead of 'value'
+    // use 'values' option instead of 'value',
+    // defaults to []
     values: [new Date(), new Date(2016, 5, 2)], 
 
-    // set selection limits
+    // set selection limits, 
+    // defaults to null - no limit
     maxSelectedItems: 3,
+
+    // if true - only today date will be selected after click on date in footer,
+    // if false - today date will be added to selected dates,
+    // defaults to true
+    cleanSelectedItemsOnTodayClick: false,
 
     //... everything else is just like in ordinary Kendo UI Calendar
 }).data('kendoMultiCalendar');

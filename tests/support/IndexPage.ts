@@ -7,28 +7,32 @@ export class IndexPage {
 
     private static navigateDelay = 3500;
 
-    constructor(private remote: Command<any>, depth: kendoExt.CalendarDepth = 'month') {
-        let code: Function;
+    private depth: kendoExt.CalendarDepth;
 
-        if (depth === 'month') {
-            code = (cb: Function) => {
-                $('#multi-cal').kendoMultiCalendar({ maxSelectedItems: 3 }); cb();
-            };
-        } else if (depth === 'year') {
-            code = (cb: Function) => {
-                $('#multi-cal').kendoMultiCalendar({ depth: 'year', start: 'year' }); cb();
-            };
-        } else {
-            code = (cb: Function) => {
-                $('#multi-cal').kendoMultiCalendar({ depth: 'decade', start: 'decade' }); cb();
-            };
-        }
+    constructor(
+        private remote: Command<any>,
+        options: { depth?: kendoExt.CalendarDepth; cleanOnTodayClick?: boolean; maxItems?: number } = {}
+    ) {
+        const opts = { ...{ depth: 'month', cleanOnTodayClick: true, maxItems: 3 }, ...options };
+
+        const code = (depth: kendoExt.CalendarDepth, cleanOnTodayClick: boolean, maxItems: number, cb: Function) => {
+            $('#multi-cal').kendoMultiCalendar({
+                depth,
+                start: depth,
+                cleanSelectedItemsOnTodayClick: cleanOnTodayClick,
+                maxSelectedItems: maxItems
+            });
+
+            cb();
+        };
+
+        this.depth = (opts.depth as kendoExt.CalendarDepth);
 
         this.remote = remote
             .get((require as IRequire & NodeRequire).toUrl('../index.html'))
             .setFindTimeout(2500)
             .setPageLoadTimeout(5000)
-            .executeAsync(code, []);
+            .executeAsync(code, [opts.depth, opts.cleanOnTodayClick, opts.maxItems]);
     }
 
     public static day(day: number): Date {
@@ -76,21 +80,11 @@ export class IndexPage {
             .execute<void>(code, [dates]);
     }
 
-    public selectDatesWithClick(dates: Date[], depth: kendoExt.CalendarDepth = 'month'): Command<void> {
-        let selector: Function;
-
-        if (depth === 'month') {
-            selector = IndexPage.daySel;
-        } else if (depth === 'year') {
-            selector = IndexPage.monthSel;
-        } else {
-            selector = IndexPage.yearSel;
-        }
-
+    public selectDatesWithClick(dates: Date[]): Command<void> {
         return dates.reduce(
             (command, date) => {
                 return command.then<any>(() => this.remote
-                    .findByCssSelector(selector(date))
+                    .findByCssSelector(this.dateSelector()(date))
                     .then<void>(this.mouseClick)
                 );
             },
@@ -155,6 +149,34 @@ export class IndexPage {
             .sleep(IndexPage.navigateDelay);
     }
 
+    public todayClick(): Command<void> {
+        return this.remote
+            .findByCssSelector('.k-nav-today')
+            .then<void>(this.mouseClick);
+    }
+
+    public multiCalendarIsPresent(): Command<boolean> {
+        const code = () => {
+            const multiCalendar = $('#multi-cal').data('kendoMultiCalendar');
+
+            return multiCalendar instanceof kendoExt.MultiCalendar;
+        };
+
+        return this.remote
+            .execute(code, []);
+    }
+
+    public destroy(): Command<void> {
+        const code = () => {
+            $('#multi-cal')
+                .data('kendoMultiCalendar')
+                .destroy();
+        };
+
+        return this.remote
+            .execute<void>(code, []);
+    }
+
     private selectedDatesFromCode(): Command<Date[]> {
         const code = () => JSON.stringify(
             $('#multi-cal')
@@ -187,6 +209,16 @@ export class IndexPage {
                     throw error;
                 }
             });
+    }
+
+    private dateSelector(): ((date: Date) => string) {
+        if (this.depth === 'month') {
+            return IndexPage.daySel;
+        } else if (this.depth === 'year') {
+            return IndexPage.monthSel;
+        } else {
+            return IndexPage.yearSel;
+        }
     }
 
     private mouseClick = (element: Element): Command<void> => {
