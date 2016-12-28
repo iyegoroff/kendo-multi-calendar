@@ -1,3 +1,11 @@
+declare namespace kendo {
+    namespace ui {
+        interface Calendar {
+            _todayClick(e: kendo.ui.CalendarEvent): void;
+        }
+    }
+}
+
 namespace kendoExt {
 
     export type CalendarDepth = 'month' | 'year' | 'decade' | 'century';
@@ -29,18 +37,12 @@ namespace kendoExt {
             century: 3
         };
 
-        private static todaySel = '.k-nav-today';
-
         private _values: Date[];
 
         constructor(element: Element | JQuery | string, options?: MultiCalendarOptions) {
             super(element as Element, options);
 
             this._values = (options && options.values) || [];
-
-            this.wrapper
-                .find(MultiCalendar.todaySel)
-                .on('click', this.selectToday);
 
             (this as any).navigate();
         }
@@ -51,14 +53,6 @@ namespace kendoExt {
                 && first.getFullYear() === second.getFullYear()
                 && first.getMonth() === second.getMonth()
                 && first.getDate() === second.getDate();
-        }
-
-        public destroy() {
-            this.wrapper
-                .find(MultiCalendar.todaySel)
-                .off('click', this.selectToday);
-
-            super.destroy();
         }
 
         public values(newValues?: Date[]): Date[] {
@@ -139,6 +133,12 @@ namespace kendoExt {
             }
 
             this.navigate(value, (index - 1 as any));
+        }
+
+        public _todayClick(e: kendo.ui.CalendarEvent) {
+            this.selectToday();
+
+            super._todayClick(e);
         }
 
         private canSelectItems(amount: number): boolean {

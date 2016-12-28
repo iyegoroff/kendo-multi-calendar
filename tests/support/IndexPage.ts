@@ -166,17 +166,6 @@ export class IndexPage {
             .execute(code, []);
     }
 
-    public destroy(): Command<void> {
-        const code = () => {
-            $('#multi-cal')
-                .data('kendoMultiCalendar')
-                .destroy();
-        };
-
-        return this.remote
-            .execute<void>(code, []);
-    }
-
     private selectedDatesFromCode(): Command<Date[]> {
         const code = () => JSON.stringify(
             $('#multi-cal')

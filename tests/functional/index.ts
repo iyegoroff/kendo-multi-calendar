@@ -176,20 +176,6 @@ bdd.describe('multi calendar', () => {
             });
     });
 
-    bdd.it('should delete calendar', () => {
-        const page = new IndexPage(remote);
-
-        return page.multiCalendarIsPresent()
-            .then(isPresent => {
-                expect(isPresent).to.eql(true);
-            })
-            .then<void>(() => page.destroy())
-            .then<boolean>(() => page.multiCalendarIsPresent())
-            .then(isPresent => {
-                expect(isPresent).to.eql(false);
-            });
-    });
-
     bdd.it('only today should remain selected after click on today in footer', () => {
         const page = new IndexPage(remote);
         const dates = [10, 15, 20].map(IndexPage.day);
