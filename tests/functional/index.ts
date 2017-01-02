@@ -200,7 +200,7 @@ bdd.describe('multi calendar', () => {
             .then<Date[][]>(() => page.packedSelectedDates())
             .then(([apiDates, domDates]) => {
                 expect(apiDates).to.eql(expectedDates);
-                expect(domDates).to.eql([...expectedDates].sort());
+                expect(domDates).to.eql([...expectedDates].sort((f: Date, s: Date) => f.getTime() - s.getTime()));
             });
     });
 });
