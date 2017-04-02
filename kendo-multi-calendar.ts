@@ -144,7 +144,7 @@ namespace kendoExt {
         private canSelectItems(amount: number): boolean {
             const max = (this.options as MultiCalendarOptions).maxSelectedItems;
 
-            return max === null || amount <= max;
+            return !max || amount <= max;
         }
 
         private cellByDate(value: string): JQuery {
