@@ -16,13 +16,13 @@ addons:
     no_ssl_bump_domains: all
   jwt:
     secure: >
-      UukZRNFKzNbfm0gKBXp3lmr9H/B+lOPQ0hwwe8h5hiSy+qZJZJ+taAIDDmAujF+OwsLQg+otQojeIdUq0lXyXwAjEqoJmt9KHRw66hTSon6gE/sur
-      uY5whvb+DuCvq95w17AuSeZYwUZ6bjl+JQE1xWd4QuaCAviZv/Ddv5rpBmmO6eax4wDZPKs6MTCHTu1KWZNNh/R75eUH5IdqjJVnR2fpI/5F2F/Is
-      +e84eSV1auIjbRJo6LkpeSOKrqFBHVUBFinf45M8bp33GmGlduKRaGbtkdyNF7d3ScrYz+w6FOFrn0nzYpraNhUNgPmthj0p6TZxpYUlezg7T7QV5
-      Y0r5KZUYx5mPrxwsVBZTktLFJB9vs+SpBZ2f0jRfZTlHtSZHGbBhBSXIJo+kwomst4qoGD7p5WGdPi43DmEpGLc5KCPmFHmxvSjrrUYXL2WqVOdwD
-      mLEDRab/qDTSFYj+ABzwlrf/OoAbbEQ2jJUnd5h+PtaYszWAb5GVG3MG1VcqylPm4Jt+BHeAKffmCDfGwN72ixKM32aRLJUpHdljBBUkp/nKz6KxE
-      AenW/ALZG195vTgHKDy6YayDAhEhT3j8uS5lceyXASvs5lpM36/9fFFljnF6c3P3KFlY/AZAGgIiUrzkm2R1SsT7R59uh7J44ElTw3mUSp7tJCuI9
-      e9iB4=
+      uvgMIV9pV34IxL6/AZTajEW9fBz0KeO6Sht1x5NAb34AO70Aaw9g5cjk9FiaH5bP0dEY5YDKSiPvT9plBs36djdmoOjv87OGMpg/IitZk9MSwTuIS
+      q+eLooQdEcFlTLxdTgeZ0xunQ516Y5M4j4idFiOxiMHmRbqOFjKnVjr/inhobmIbk+dZVbpnjXd+Qu1CLvJm1Mgd++4rugJBlQ6lzbfIHA77AJG5I
+      fGnurQKOqxsISoNmEPYeZeK96ylfm7rwpxzIjWWC5CaVltJnMzP4XOieTjK3ycIpqv2VGshT2z26smnycm99RVj/SGQuDHfx870GBx2xNw11GNclR
+      9FqrA8abYmOsMgX2c6rHzQIgBB3YC24SBxwVx1Qnp4uv+OZlqwFun/6kncFJhgb54A4g/KaiTRHA8aalwYQiU8XoSJlu++uwJoMVDflDG0NAWbVw8
+      a0OPbZhujXFx+Bebg6j3RboPfzyvTvFobHVvNOBkyV7bRzGDx0PkBAIydeyWDgS7LILSrX5zfWD1xck+FCM/LUyeAI6PFmfjEz8hsl9V/kcQ86h9O
+      nHPYvh0ssIZV8vMmSCpnpl6NxabeUp7s8wa/5Ns2Erh1ptI2mi/fhhkuwgWWbMdxDNx9cdtYuLZNCaphb8MAHTVErvOlVUOdkwgCLskfxQHTlAZMl
+      odo7Y=
 
 
 branches:
