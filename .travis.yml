@@ -24,7 +24,6 @@ addons:
       nHPYvh0ssIZV8vMmSCpnpl6NxabeUp7s8wa/5Ns2Erh1ptI2mi/fhhkuwgWWbMdxDNx9cdtYuLZNCaphb8MAHTVErvOlVUOdkwgCLskfxQHTlAZMl
       odo7Y=
 
-
 branches:
   only:
     - master
