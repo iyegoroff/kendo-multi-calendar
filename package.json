@@ -1,6 +1,6 @@
 {
   "name": "kendo-multi-calendar",
-  "version": "2.2.4",
+  "version": "2.2.5",
   "description": "Kendo UI calendar with multiple date selection.",
   "main": "dist/kendo-multi-calendar.js",
   "types": "dist/kendo-multi-calendar.d.ts",
