@@ -8,7 +8,7 @@ kendo-multi-calendar
 [![typings included](https://img.shields.io/badge/typings-included-brightgreen.svg?t=1491221022009)](#typescript)
 [![npm](https://img.shields.io/npm/l/express.svg?t=1491221022009)](https://www.npmjs.com/package/kendo-multi-calendar)
 
-[![Build Status](https://saucelabs.com/browser-matrix/iyegoroff-5.svg?t=1491221022009)](https://saucelabs.com/beta/builds/d1e91812e92e44818ab0ec3508221a0f)
+[![Build Status](https://saucelabs.com/browser-matrix/iyegoroff-6.svg)](https://saucelabs.com/beta/builds/c9b5135835524b29b1a1e2e481da380e)
 
 Extended Kendo UI Calendar widget that supports multiselection. [Demo](https://kendo-multi-calendar.surge.sh/)
 
