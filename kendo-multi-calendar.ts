@@ -10,32 +10,23 @@ namespace kendoExt {
 
     export type CalendarDepth = 'month' | 'year' | 'decade' | 'century';
 
-    export interface MultiCalendarOptions {
-        name?: string;
-        culture?: string;
-        dates?: any;
-        depth?: CalendarDepth;
-        disableDates?: any | Function;
-        footer?: string | Function;
-        format?: string;
-        max?: Date;
-        min?: Date;
-        month?: kendo.ui.CalendarMonth;
-        start?: CalendarDepth;
+    export interface MultiCalendarOptions extends kendo.ui.CalendarOptions {
         values?: Date[];
         maxSelectedItems?: number | null;
         cleanSelectedItemsOnTodayClick?: boolean;
-        change?(e: kendo.ui.CalendarEvent): void;
-        navigate?(e: kendo.ui.CalendarEvent): void;
     }
 
     export class MultiCalendar extends kendo.ui.Calendar {
+        public static fn: MultiCalendar;
+
         private static _views: { [key: string]: number } = {
             month: 0,
             year: 1,
             decade: 2,
             century: 3
         };
+
+        public options: MultiCalendarOptions;
 
         private _values: Date[];
 
@@ -74,10 +65,6 @@ namespace kendoExt {
                         return true;
                     }
                 );
-
-                if (this._values.length) {
-                    (this as any)._value = this._values[0];
-                }
 
                 this.updateSelection(this._values, valuesToClear);
             }
@@ -157,6 +144,13 @@ namespace kendoExt {
         private updateSelection(valuesToSelect: Date[] = [], valuesToClear: Date[] = []) {
             if ((this as any)._index === MultiCalendar._views[(this.options.depth as string)]) {
                 const selected = 'k-state-selected';
+
+                const _value = ((this as any)._value);
+
+                if (_value) {
+                    this.cellByDate(this.view().toDateString(_value))
+                        .removeClass(selected);
+                }
 
                 valuesToSelect.forEach(value => {
                     this.cellByDate(this.view().toDateString(value))

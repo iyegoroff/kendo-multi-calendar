@@ -133,6 +133,23 @@ bdd.describe('multi calendar', () => {
             });
     });
 
+    bdd.it('should clear dates and navigate to next month and back', () => {
+        const page = new IndexPage(remote);
+        const dates = [10, 15, 20].map(IndexPage.day);
+        const clearedDates = [20].map(IndexPage.day);
+        const remainingDates = [10, 15].map(IndexPage.day);
+
+        return page.selectDatesWithCode(dates)
+            .then<void>(() => page.selectDatesWithClick(clearedDates))
+            .then<void>(() => page.navigateToFuture())
+            .then<void>(() => page.navigateToPast())
+            .then<Date[][]>(() => page.packedSelectedDates())
+            .then(([apiDates, domDates]) => {
+                expect(apiDates).to.eql(remainingDates);
+                expect(domDates).to.eql(remainingDates);
+            });
+    });
+
     bdd.it('should select dates and navigate up and down', () => {
         const page = new IndexPage(remote);
         const dates = [10, 15, 20].map(IndexPage.day);
