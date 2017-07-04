@@ -41,17 +41,17 @@
   },
   "homepage": "https://github.com/iyegoroff/kendo-multi-calendar#readme",
   "devDependencies": {
-    "@types/jquery": "^2.0.48",
+    "@types/jquery": "^1.10.33",
     "@types/kendo-ui": "^2017.1.7",
     "break-cache": "^1.0.3",
     "coveralls": "^2.13.1",
     "intern": "^3.4.5",
     "remap-istanbul": "^0.9.5",
-    "shx": "^0.2.1",
+    "shx": "^0.2.2",
     "tslint": "^5.4.3",
-    "tslint-config-standard": "^4.0.0",
+    "tslint-config-standard": "^6.0.1",
     "typescript": "^2.4.1",
-    "uglify-js": "^2.8.29",
-    "vrsource-tslint-rules": "^4.0.0"
+    "uglify-js": "^3.0.23",
+    "vrsource-tslint-rules": "^5.1.0"
   }
 }

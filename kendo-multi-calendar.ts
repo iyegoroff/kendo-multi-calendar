@@ -137,7 +137,7 @@ namespace kendoExt {
         private cellByDate(value: string): JQuery {
             return (this as any)._table.find('td')
                 .filter(function () {
-                    return $(this.firstChild).attr((kendo as any).attr('value')) === value;
+                    return $(this.firstChild).attr((kendo as any).attr('value')) as string === value;
                 });
         }
 
