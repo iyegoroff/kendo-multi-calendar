@@ -1,15 +1,15 @@
 {
-    "compilerOptions": {
-        "module": "umd",
-        "sourceMap": true,
-        "target": "es5",
-        "outDir": "dist",
-        "declaration": true,
-        "moduleResolution": "node",
-        "noImplicitAny": true,
-        "strictNullChecks": true
-    },
-    "include": [
-        "kendo-multi-calendar.ts"
-    ]
+  "compilerOptions": {
+    "module": "umd",
+    "sourceMap": true,
+    "target": "es5",
+    "outDir": "dist",
+    "declaration": true,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "strictNullChecks": true
+  },
+  "include": [
+    "kendo-multi-calendar.ts"
+  ]
 }
