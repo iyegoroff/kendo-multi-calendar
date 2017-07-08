@@ -1,5 +1,5 @@
 kendo-multi-calendar
-
+=========
 [![npm version](https://badge.fury.io/js/kendo-multi-calendar.svg?t=1499096737301)](https://badge.fury.io/js/kendo-multi-calendar)
 [![Build Status](https://travis-ci.org/iyegoroff/kendo-multi-calendar.svg?t=1499096737301&branch=master)](https://travis-ci.org/iyegoroff/kendo-multi-calendar)
 [![Coverage Status](https://coveralls.io/repos/github/iyegoroff/kendo-multi-calendar/badge.svg?t=1499096737301&branch=master)](https://coveralls.io/github/iyegoroff/kendo-multi-calendar?branch=master)
