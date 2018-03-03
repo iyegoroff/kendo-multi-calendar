@@ -167,7 +167,7 @@ export class IndexPage {
     return this.remote
       .findAllByCssSelector('td.k-state-selected > a')
       .then(elems => Promise.all(elems.map(elem => elem.getAttribute('data-value'))))
-      .then(values => values.filter(v => v !== null).map(dataValueToDate))
+      .then(values => values.filter(v => v).map(dataValueToDate))
       .catch((error: Error) => {
         if (error.name === 'NoSuchElement') {
           return [];
