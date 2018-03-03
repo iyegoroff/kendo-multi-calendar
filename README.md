@@ -1,14 +1,14 @@
 kendo-multi-calendar
 =========
-[![npm version](https://badge.fury.io/js/kendo-multi-calendar.svg?t=1499096737301)](https://badge.fury.io/js/kendo-multi-calendar)
-[![Build Status](https://travis-ci.org/iyegoroff/kendo-multi-calendar.svg?t=1499096737301&branch=master)](https://travis-ci.org/iyegoroff/kendo-multi-calendar)
-[![Coverage Status](https://coveralls.io/repos/github/iyegoroff/kendo-multi-calendar/badge.svg?t=1499096737301&branch=master)](https://coveralls.io/github/iyegoroff/kendo-multi-calendar?branch=master)
-[![Dependency Status](https://david-dm.org/iyegoroff/kendo-multi-calendar.svg?t=1499096737301)](https://david-dm.org/iyegoroff/kendo-multi-calendar)
-[![devDependency Status](https://david-dm.org/iyegoroff/kendo-multi-calendar/dev-status.svg?t=1499096737301)](https://david-dm.org/iyegoroff/kendo-multi-calendar#info=devDependencies)
-[![typings included](https://img.shields.io/badge/typings-included-brightgreen.svg?t=1499096737301)](#typescript)
-[![npm](https://img.shields.io/npm/l/express.svg?t=1499096737301)](https://www.npmjs.com/package/kendo-multi-calendar)
+[![npm version](https://badge.fury.io/js/kendo-multi-calendar.svg?t=1520066759967)](https://badge.fury.io/js/kendo-multi-calendar)
+[![Build Status](https://travis-ci.org/iyegoroff/kendo-multi-calendar.svg?t=1520066759967&branch=master)](https://travis-ci.org/iyegoroff/kendo-multi-calendar)
+[![Coverage Status](https://coveralls.io/repos/github/iyegoroff/kendo-multi-calendar/badge.svg?t=1520066759967&branch=master)](https://coveralls.io/github/iyegoroff/kendo-multi-calendar?branch=master)
+[![Dependency Status](https://david-dm.org/iyegoroff/kendo-multi-calendar.svg?t=1520066759967)](https://david-dm.org/iyegoroff/kendo-multi-calendar)
+[![devDependency Status](https://david-dm.org/iyegoroff/kendo-multi-calendar/dev-status.svg?t=1520066759967)](https://david-dm.org/iyegoroff/kendo-multi-calendar#info=devDependencies)
+[![typings included](https://img.shields.io/badge/typings-included-brightgreen.svg?t=1520066759967)](#typescript)
+[![npm](https://img.shields.io/npm/l/express.svg?t=1520066759967)](https://www.npmjs.com/package/kendo-multi-calendar)
 
-[![Build Status](https://saucelabs.com/browser-matrix/iyegoroff-6.svg?t=1499096737301)](https://saucelabs.com/beta/builds/c9b5135835524b29b1a1e2e481da380e)
+[![Build Status](https://saucelabs.com/browser-matrix/iyegoroff-6.svg?t=1520066759967)](https://saucelabs.com/beta/builds/c9b5135835524b29b1a1e2e481da380e)
 
 Extended Kendo UI Calendar widget that supports multiselection. [Demo](https://kendo-multi-calendar.surge.sh/)
 
