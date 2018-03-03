@@ -3,7 +3,7 @@ export * from './intern';
 export const environments = [
   {
     browserName: 'chrome',
-    version: ['57'],
+    version: ['63'],
     platform: ['Windows 10'],
     recordVideo: false,
     recordScreenshots: false
