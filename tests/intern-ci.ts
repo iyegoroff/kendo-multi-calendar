@@ -10,7 +10,7 @@ export const environments = [
   },
   {
     browserName: 'firefox',
-    version: ['57', '58'],
+    version: ['51', '52'],
     platform: ['Windows 10'],
     marionette: true,
     recordVideo: false,
