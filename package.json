@@ -1,57 +1,57 @@
 {
-  "name": "kendo-multi-calendar",
-  "version": "2.2.6",
-  "description": "Kendo UI calendar with multiple date selection.",
-  "main": "dist/kendo-multi-calendar.js",
-  "types": "dist/kendo-multi-calendar.d.ts",
-  "scripts": {
-    "preversion": "npm run reinstall && npm run build && npm run lint && npm test && npm run break-cache-commit",
-    "postversion": "git add -A . && git push && git push --tags",
-    "build": "tsc && uglifyjs -c -m -o ./dist/kendo-multi-calendar.min.js ./dist/kendo-multi-calendar.js",
-    "reinstall": "npm run clean && rm -rf node_modules && npm i",
-    "clean": "rm -rf dist build coverage",
-    "test": "npm run test:local",
-    "test:local": "npm run build:tests && intern-runner config=build/tests/intern",
-    "test:ci:minimal": "npm run build:tests && intern-runner config=build/tests/intern-ci-minimal",
-    "test:ci:normal": "npm run build:tests && intern-runner config=build/tests/intern-ci",
-    "build:tests": "tsc -p tests && shx cp tests/index.html build/tests/index.html",
-    "lint": "tslint kendo-multi-calendar.ts tests/**/{*.ts,*.d.ts}",
-    "coverage": "remap-istanbul -i coverage/coverage-final.json -t text-lcov | coveralls",
-    "break-cache": "break-cache -i README.md -m \"\\.svg\" -o README.md",
-    "break-cache-commit": "npm run break-cache && git commit -am \"[skip ci] readme cache break\""
-  },
-  "files": [
-    "dist/",
-    "kendo-multi-calendar.ts",
-    "tsconfig.json"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iyegoroff/kendo-multi-calendar.git"
-  },
-  "keywords": [
-    "kendo-ui",
-    "calendar",
-    "multiselect"
-  ],
-  "author": "iyegoroff <iegoroff@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/iyegoroff/kendo-multi-calendar/issues"
-  },
-  "homepage": "https://github.com/iyegoroff/kendo-multi-calendar#readme",
-  "devDependencies": {
-    "@types/jquery": "^1.10.33",
-    "@types/kendo-ui": "^2017.1.7",
-    "break-cache": "^1.0.3",
-    "coveralls": "^2.13.1",
-    "intern": "^3.4.5",
-    "remap-istanbul": "^0.9.5",
-    "shx": "^0.2.2",
-    "tslint": "^5.4.3",
-    "tslint-config-standard": "^6.0.1",
-    "typescript": "^2.4.1",
-    "uglify-js": "^3.0.23",
-    "vrsource-tslint-rules": "^5.1.0"
-  }
+	"name": "kendo-multi-calendar",
+	"version": "2.2.6",
+	"description": "Kendo UI calendar with multiple date selection.",
+	"main": "dist/kendo-multi-calendar.js",
+	"types": "dist/kendo-multi-calendar.d.ts",
+	"scripts": {
+		"preversion": "npm run reinstall && npm run build && npm run lint && npm test && npm run break-cache-commit",
+		"postversion": "git add -A . && git push && git push --tags",
+		"build": "tsc && uglifyjs -c -m -o ./dist/kendo-multi-calendar.min.js ./dist/kendo-multi-calendar.js",
+		"reinstall": "npm run clean && rm -rf node_modules && npm i",
+		"clean": "rm -rf dist build coverage",
+		"test": "npm run test:local",
+		"test:local": "npm run build:tests && intern-runner config=build/tests/intern",
+		"test:ci:minimal": "npm run build:tests && intern-runner config=build/tests/intern-ci-minimal",
+		"test:ci:normal": "npm run build:tests && intern-runner config=build/tests/intern-ci",
+		"build:tests": "tsc -p tests && shx cp tests/index.html build/tests/index.html",
+		"lint": "tslint -p . kendo-multi-calendar.ts && tslint -p tests/tsconfig.json tests/**/{*.ts,*.d.ts}",
+		"coverage": "remap-istanbul -i coverage/coverage-final.json -t text-lcov | coveralls",
+		"break-cache": "break-cache -i README.md -m \"\\.svg\" -o README.md",
+		"break-cache-commit": "npm run break-cache && git commit -am \"[skip ci] readme cache break\""
+	},
+	"files": [
+		"dist/",
+		"kendo-multi-calendar.ts",
+		"tsconfig.json"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/iyegoroff/kendo-multi-calendar.git"
+	},
+	"keywords": [
+		"kendo-ui",
+		"calendar",
+		"multiselect"
+	],
+	"author": "iyegoroff <iegoroff@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/iyegoroff/kendo-multi-calendar/issues"
+	},
+	"homepage": "https://github.com/iyegoroff/kendo-multi-calendar#readme",
+	"devDependencies": {
+		"@types/jquery": "^1.10.34",
+		"@types/kendo-ui": "^2018.1.1",
+		"break-cache": "^1.0.3",
+		"coveralls": "^3.0.0",
+		"intern": "^3.4.6",
+		"remap-istanbul": "^0.10.1",
+		"shx": "^0.2.2",
+		"tslint": "^5.9.1",
+		"tslint-config-standard": "^7.0.0",
+		"typescript": "^2.7.2",
+		"uglify-js": "^3.3.12",
+		"vrsource-tslint-rules": "^5.8.1"
+	}
 }

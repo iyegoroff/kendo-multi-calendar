@@ -1,7 +1,7 @@
 declare namespace kendo {
   namespace ui {
     interface Calendar {
-      _todayClick(e: kendo.ui.CalendarEvent): void;
+      _todayClick(e: CalendarEvent): void;
     }
   }
 }
@@ -131,14 +131,14 @@ namespace kendoExt {
     }
 
     private canSelectItems(amount: number): boolean {
-      const max = (this.options as MultiCalendarOptions).maxSelectedItems;
+      const max = this.options.maxSelectedItems;
 
       return !max || amount <= max;
     }
 
     private cellByDate(value: string): JQuery {
       return (this as any)._table.find('td').filter(function () {
-        return ($(this.firstChild).attr((kendo as any).attr('value')) as string) === value;
+        return $(this.firstChild).attr((kendo as any).attr('value')) === value;
       });
     }
 
@@ -165,7 +165,7 @@ namespace kendoExt {
     private selectToday = () => {
       const today = new Date();
       const value = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-      const values = (this.options as MultiCalendarOptions).cleanSelectedItemsOnTodayClick
+      const values = this.options.cleanSelectedItemsOnTodayClick
         ? [value]
         : [...this._values, value];
 
