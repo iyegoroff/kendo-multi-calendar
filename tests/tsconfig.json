@@ -1,7 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
+    "lib": [
+      "dom",
+      "es5",
+      "es2015.promise",
+      "es2015.symbol.wellknown"
+    ],
     "inlineSourceMap": true,
     "outDir": "../build",
     "moduleResolution": "node",
