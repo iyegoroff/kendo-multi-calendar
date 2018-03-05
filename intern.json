@@ -53,14 +53,6 @@
           "platform": "Windows 7",
           "recordVideo": false,
           "recordScreenshots": false
-        },
-        {
-          "browserName": "safari",
-          "version": ["11"],
-          "platform": "macOS 10.13",
-          "recordVideo": false,
-          "recordScreenshots": false,
-          "fixSessionCapabilities": "no-detect"
         }
       ]
     }
