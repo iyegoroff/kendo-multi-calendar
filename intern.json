@@ -17,8 +17,8 @@
       "environments": {
           "browserName": "internet explorer",
           "version": ["11"],
-          "iedriverVersion": "2.52.1",
-          "platform": "Windows 7",
+          "iedriverVersion": "3.8.0",
+          "platform": "Windows 8.1",
           "recordVideo": false,
           "recordScreenshots": false
         }
