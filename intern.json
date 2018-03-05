@@ -5,7 +5,7 @@
   ],
   "reporters": ["runner", "htmlcoverage"],
   "tunnelOptions": {
-    "drivers": ["chrome", "firefox"]
+    "drivers": ["chrome", "firefox", "edge", "ie"]
   },
   "functionalSuites": "build/tests/functional/index.js",
   "coverage": "build/*.js",
