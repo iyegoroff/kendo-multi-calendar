@@ -1,7 +1,6 @@
 import Command from '@theintern/leadfoot/Command';
 import Promise from '@dojo/shim/Promise';
 import Element from '@theintern/leadfoot/Element';
-import keys from '@theintern/leadfoot/keys';
 
 export class IndexPage {
   private static navigateDelay = 3500;
