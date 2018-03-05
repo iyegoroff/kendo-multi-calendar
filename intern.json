@@ -16,7 +16,7 @@
       "maxConcurrency": 5,
       "environments": {
           "browserName": "internet explorer",
-          "version": ["10"],
+          "version": ["11"],
           "platform": "Windows 7",
           "recordVideo": false,
           "recordScreenshots": false
