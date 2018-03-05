@@ -8,7 +8,7 @@
     "drivers": ["chrome", "firefox"]
   },
   "functionalSuites": "build/tests/functional/index.js",
-  "coverage": "build/kendo-multi-calendar.js",
+  "coverage": "build/*.js",
   "configs": {
     "ci-minimal": {
       "tunnel": "saucelabs",
