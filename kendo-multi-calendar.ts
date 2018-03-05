@@ -142,7 +142,7 @@ namespace kendoExt {
       });
     }
 
-    private updateSelection(valuesToSelect: Date[] = [], valuesToClear: Date[] = []) {
+    private updateSelection(valuesToSelect: Date[], valuesToClear: Date[] = []) {
       if ((this as any)._index === MultiCalendar._views[this.options.depth as string]) {
         const selected = 'k-state-selected';
 

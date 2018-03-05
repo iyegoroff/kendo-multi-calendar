@@ -1,12 +1,19 @@
 language: node_js
 
+install:
+  - npm ci
+
+cache:
+  directories:
+    - "$HOME/.npm"
+
 matrix:
   fast_finish: true
   include:
     - env: TEST='minimal'
-      node_js: '7'
+      node_js: '8'
     - env: TEST='normal'
-      node_js: '7'
+      node_js: '8'
   allow_failures:
     - env: TEST='normal'
 

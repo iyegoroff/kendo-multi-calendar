@@ -1,7 +1,7 @@
-import * as Command from 'leadfoot/Command';
-import { IRequire } from 'dojo/loader';
-import * as Promise from 'dojo/Promise';
-import Element = require('leadfoot/Element');
+import Command from '@theintern/leadfoot/Command';
+import Promise from '@dojo/shim/Promise';
+import Element from '@theintern/leadfoot/Element';
+import keys from '@theintern/leadfoot/keys';
 
 export class IndexPage {
   private static navigateDelay = 3500;
@@ -40,7 +40,7 @@ export class IndexPage {
     this.depth = opts.depth as kendoExt.CalendarDepth;
 
     this.remote = remote
-      .get((require as IRequire & NodeRequire).toUrl('../index.html'))
+      .get('./build/tests/index.html')
       .setFindTimeout(2500)
       .setPageLoadTimeout(5000)
       .executeAsync(code, [opts.depth, opts.cleanOnTodayClick, opts.maxItems]);
@@ -167,7 +167,7 @@ export class IndexPage {
     return this.remote
       .findAllByCssSelector('td.k-state-selected > a')
       .then(elems => Promise.all(elems.map(elem => elem.getAttribute('data-value'))))
-      .then(values => values.filter(v => v).map(dataValueToDate))
+      .then(values => values.filter((v: string) => v).map(dataValueToDate))
       .catch((error: Error) => {
         if (error.name === 'NoSuchElement') {
           return [];
