@@ -2,7 +2,7 @@ kendo-multi-calendar
 =========
 [![npm version](https://badge.fury.io/js/kendo-multi-calendar.svg?t=1520227475245)](https://badge.fury.io/js/kendo-multi-calendar)
 [![Build Status](https://travis-ci.org/iyegoroff/kendo-multi-calendar.svg?t=1520227475245&branch=master)](https://travis-ci.org/iyegoroff/kendo-multi-calendar)
-[![codecov](https://codecov.io/gh/iyegoroff/kendo-multi-calendar/branch/master/graph/badge.svg?t=1520227475245)](https://iyegoroff.io/gh/codecov/kendo-multi-calendar)
+[![codecov](https://codecov.io/gh/iyegoroff/kendo-multi-calendar/branch/master/graph/badge.svg?t=1520227475245)](https://codecov.io/gh/iyegoroff/kendo-multi-calendar)
 [![Dependency Status](https://david-dm.org/iyegoroff/kendo-multi-calendar.svg?t=1520227475245)](https://david-dm.org/iyegoroff/kendo-multi-calendar)
 [![devDependency Status](https://david-dm.org/iyegoroff/kendo-multi-calendar/dev-status.svg?t=1520227475245)](https://david-dm.org/iyegoroff/kendo-multi-calendar#info=devDependencies)
 [![typings included](https://img.shields.io/badge/typings-included-brightgreen.svg?t=1520227475245)](#typescript)
